@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style>
+        .provinces {
+          background-color: #fff;
+          border: 1px solid #ccc;
+        }
+        .hk {
+            position:relative;
+            left:-750px;
+            top:0px;
+        }
+        #tooltip {   
+            position: absolute;           
+            text-align: center;
+            padding: 20px;             
+            margin: 10px;
+            font: 12px sans-serif;        
+            background: lightsteelblue;   
+            border: 1px;      
+            border-radius: 2px;           
+            pointer-events: none;         
+        }
+        #tooltip h4{
+          margin:0;
+          font-size:14px;
+        }
+        #tooltip{
+          background:rgba(0,0,0,0.9);
+          border:1px solid grey;
+          border-radius:5px;
+          font-size:12px;
+          width:auto;
+          padding:4px;
+          color:white;
+          opacity:0;
+        }
+        #tooltip table{
+          table-layout:fixed;
+        }
+        #tooltip tr td{
+          padding:0;
+          margin:0;
+        }
+        #tooltip tr td:nth-child(1){
+          width:50px;
+        }
+        #tooltip tr td:nth-child(2){
+          text-align:center;
+        }
+        #hist{
+        	position: absolute;     
+
+        	border:1px solid grey;
+        	border-radius:2px;
+        	font-size:12px;
+        	padding:2px;
+        	color:green;
+        	opacity:1;
+        	text-align: center;
+        }
+        .axis path,
+    		.axis line{
+    			fill: none;
+    			stroke: black;
+    			shape-rendering: crispEdges;
+    		}
+
+    		.axis text {
+    			font-family: sans-serif;
+    			font-size: 11px;
+    			fill: black;
+    		}
+    		#close {
+    			position: absolute;
+    			left: 1060px;
+    			top: 88px;
+    		}
+    		#chart {
+    			position: absolute;
+    			left: 380px;
+    			top:88px;
+    		}
+        #canvas{
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+        }
+        #map {
+        	top:200px;
+        }
+    </style>
+  </head>
+  <body>
+    
+    <div id = "tooltip"></div>
+    <div id = "chart"></div>
+    <div id = "close"></div>
+    <div id = "map"></div>
+    <div id = "choose"></div>
+    <div>
+      <canvas id="canvas" height="700" width="1440"></canvas>
+    </div>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="Chart.bundle.js"></script>   
+    <script src="draw.js"></script>
+
+  </body>
+</html>
